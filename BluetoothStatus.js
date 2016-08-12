@@ -1,13 +1,9 @@
 var exec = require('cordova/exec');
 
-var BluetoothStatus = function() {
-};
+var BluetoothStatus = function() {};
 
 BluetoothStatus.initPlugin = function() {
-    //wait for device to be ready
-    document.addEventListener("deviceready", function () {
-        exec(null, null, "BluetoothStatus", "initPlugin", []);
-    }, false);
+    exec(null, null, "BluetoothStatus", "initPlugin", []);
 };
 
 BluetoothStatus.enableBT = function() {
