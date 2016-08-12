@@ -102,6 +102,9 @@ public class BluetoothStatus extends CordovaPlugin {
                 sendJS("javascript:cordova.fireWindowEvent('BluetoothStatus.enabled');");
             } else {
                 Log.e(LOG_TAG, "Bluetooth is not enabled");
+
+                sendJS("javascript:cordova.plugins.BluetoothStatus.BTenabled = false;");
+                sendJS("javascript:cordova.fireWindowEvent('BluetoothStatus.disabled');");
             }
         }
     }
